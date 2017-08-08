@@ -3,6 +3,7 @@ require_relative 'cursor'
 require 'colorize'
 
 class Display
+
   def initialize(board, cursor)
     @board = board
     @cursor = cursor
@@ -26,7 +27,7 @@ class Display
   def display_board
     render
     while true
-      var = @cursor.get_input
+      @cursor.get_input
       system('clear')
       Display.new(@board, @cursor).render
     end

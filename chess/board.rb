@@ -5,6 +5,7 @@ require_relative 'display'
 
 class Board
   attr_reader :grid
+
   def self.setup_board
     valid_rows = [0, 1, 6, 7]
     grid = Array.new(8) { Array.new(8) }
