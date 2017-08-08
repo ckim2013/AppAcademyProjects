@@ -1,9 +1,10 @@
 require_relative 'pieces'
 require_relative 'errors'
+require_relative 'display'
 
 
 class Board
-
+  attr_reader :grid
   def self.setup_board
     valid_rows = [0, 1, 6, 7]
     grid = Array.new(8) { Array.new(8) }
@@ -41,6 +42,15 @@ class Board
   def []=(pos, piece)
     x, y = pos
     @grid[x][y] = piece
+  end
+
+  def in_bounds?(new_pos)
+    x, y = new_pos
+    x.between?(0,7) && y.between?(0,7)
+  end
+
+  def render
+    Display.new(@grid).render
   end
 
 end
