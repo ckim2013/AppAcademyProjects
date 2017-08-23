@@ -18,12 +18,14 @@ class Artwork < ApplicationRecord
   belongs_to :artist,
     primary_key: :id,
     foreign_key: :artist_id,
-    class_name: :User
+    class_name: :User,
+    dependent: destroy
 
   has_many :artwork_shares,
     primary_key: :id,
     foreign_key: :artwork_id,
-    class_name: :ArtworkShare
+    class_name: :ArtworkShare,
+
 
   has_many :viewers,
     through: :artwork_shares,
