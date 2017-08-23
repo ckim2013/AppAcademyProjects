@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   # patch 'users/:id', to: 'users#update'
   # put 'users/:id', to: 'users#update'
   # delete 'users/:id', to: 'users#destroy'
-  resources :users, only: [:create, :destroy, :index, :show, :update]
+  resources :users do
+    resources :artworks, only: [:index]
+    resources :artwork_shares, only: [:index]
+  end
+  resources :artworks
   resources :artwork_shares, only: [:create, :destroy]
 end
