@@ -1,0 +1,18 @@
+<h2>SIGN-IN</h2>
+<%= link_to "SIGN UP", new_user_url, class: "sign" %>
+<%= render partial: 'layouts/errors' %>
+
+<br><br>
+<form action="<%= session_url %>" method="post">
+
+  <input id = "email" type="text" name="user[email]" placeholder="Email">
+
+  <br><br>
+
+  <input id="password" type="password" name="user[password]" placeholder="Password">
+
+  <br><br>
+
+  <input type="submit" value="Submit">
+
+</form>

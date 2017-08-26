@@ -1,0 +1,5 @@
+<section class="page"><div class="centered-box">
+  <h1>New Album for <%= @band.name %> </h1>
+  <%= render 'layouts/errors' %>
+  <%= render 'form', album: @album, band: @band, bands: @bands %>
+</div></section>
