@@ -1,0 +1,16 @@
+<%= @comment.content %>
+
+<h2>Reply to this comment!</h2>
+<form action="<%= comments_url %>" method="post">
+  <%= render "shared/auth_token" %>
+
+  <label>Content
+    <textarea name="comment[content]" rows="8" cols="25"></textarea>
+  </label>
+
+  <br>
+
+  <input type="hidden" name="comment[post_id]" value="<%= @comment.post_id %>">
+  <input type="submit" name="" value="Add comment!">
+
+</form>

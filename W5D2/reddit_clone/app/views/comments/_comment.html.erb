@@ -1,0 +1,6 @@
+<%= link_to comment.content, comment_url(comment) %>
+<ul>
+  <% comment.child_comments.try(:each) do |child_comment| %>
+    <li><%= render "comments/comment", comment: child_comment %></li>
+  <% end %>
+</ul>
