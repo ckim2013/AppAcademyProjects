@@ -1,0 +1,21 @@
+.ttt li {
+  /*float: left;*/
+  background: grey;
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  list-style: none;
+  float: left;
+}
+
+.ttt {
+  width: 400px;
+}
+
+.winner {
+  color: white;
+}
+
+.loser {
+  color: red;
+}
