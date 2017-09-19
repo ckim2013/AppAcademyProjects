@@ -15,18 +15,18 @@ export const receiveErrors = (errors) => ({
 
 export const signup = (user) => dispatch => (
   APIUtil.postUser(user)
-    .then((createdUser) => dispatch(receiveCurrentUser(createdUser)))
-    .catch((errors) => receiveErrors(errors))
+    .then((createdUser) => dispatch(receiveCurrentUser(createdUser)),
+      (errors) => receiveErrors(errors))
 );
 
 export const login = (user) => dispatch => (
   APIUtil.postSession(user)
-    .then((loggedInUser) => dispatch(receiveCurrentUser(loggedInUser)))
-    .catch((errors) => receiveErrors(errors))
+    .then((loggedInUser) => dispatch(receiveCurrentUser(loggedInUser)),
+      (errors) => dispatch(receiveErrors(errors)))
 );
 
 export const logout = () => dispatch => (
   APIUtil.deleteSession()
-    .then(() => dispatch(receiveCurrentUser(null)))
-    .catch((errors) => receiveErrors(errors))
+    .then(() => dispatch(receiveCurrentUser(null)),
+      (errors) => dispatch(receiveErrors(errors)))
 );
