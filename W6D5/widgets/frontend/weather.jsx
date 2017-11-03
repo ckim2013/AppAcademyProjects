@@ -49,7 +49,9 @@ class Weather extends React.Component {
 
     return (
       <div>
-        <h1>Weather</h1>
+        <div className='header-container'>
+          <h1>Weather</h1>
+        </div>
         <div className="weather">
           {content}
         </div>

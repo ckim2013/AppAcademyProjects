@@ -32,7 +32,12 @@ class AutoComplete extends React.Component {
 
     return (
       <div>
-        Name: <input type="text" value={this.state.inputVal} onChange={this.handleChange}/>
+        <div className='header-container'>
+          <h1>Autocomplete</h1>
+        </div>
+        <div>
+          Name: <input type="text" value={this.state.inputVal} onChange={this.handleChange}/>
+        </div>
         <ul>
           {matches.map((name, i) => <li key={name + i} onClick={this.handleClick.bind(this, name)}>{name}</li>)}
         </ul>

@@ -10,11 +10,9 @@ const Names = ["Chris", "Kim", "Foo", "Bar", "Christian", "Christopher"];
 class Root extends React.Component {
   render() {
     return (
-      <div>
+      <div className='widgets-container'>
         <Clock />
-        <br/>
         <Weather />
-        <br/>
         <AutoComplete names={Names}/>
       </div>
     );

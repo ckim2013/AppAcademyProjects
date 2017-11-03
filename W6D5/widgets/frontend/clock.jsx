@@ -27,10 +27,12 @@ class Clock extends React.Component {
     const time = this.state.time;
     return (
       <div>
-        <h1>Clock</h1>
+        <div className='header-container'>
+          <h1>Clock</h1>
+        </div>
         <div className="clock">
-          <header>Time: {time.getHours()}:{time.getMinutes()}:{time.getSeconds()}</header>
-          <header>Date: {time.toDateString()}</header>
+          <div>Time: {time.getHours()}:{time.getMinutes()}:{time.getSeconds()}</div>
+          <div>Date: {time.toDateString()}</div>
         </div>
       </div>
     );

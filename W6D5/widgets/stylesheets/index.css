@@ -21,9 +21,26 @@ span, article, footer, time, small {
 
 header {
   display: flex;
+  font-size: 2em;
 }
 
 input {
   background: transparent;
   border: 1px black solid;
+}
+
+.widgets-container {
+  position: absolute;
+  left: 35%;
+  top: 2%;
+}
+
+.widgets-container > * {
+  padding-bottom: 50px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
